@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Preview Certificate</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Preview of Generated Certificate</h1>
+        <img src="{{ url_for('static', filename='generated_certificates/' + certificate_filename) }}" alt="Certificate" class="certificate-image">
+        <div class="preview-container">
+            <a href="{{ url_for('download_certificate_route', filename=certificate_filename) }}" class="download-button">Download Certificate</a>
+        </div>
+    </div>
+</body>
+</html>

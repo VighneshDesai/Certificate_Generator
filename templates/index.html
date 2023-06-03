@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Certificate Generator</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Certificate Generator</h1>
+        {% if error_message %}
+            <p class="error">{{ error_message }}</p>
+        {% endif %}
+        <form action="/" method="POST">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="college">College Name:</label>
+                <input type="text" id="college" name="college" required>
+            </div>
+            <div class="form-group">
+                <label for="certificate-type">Type of Certificate:</label>
+                <select id="certificate-type" name="certificate-type" required>
+                    <option value="internship">Internship</option>
+                    <option value="workshop">Workshop</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="submit", class="generate-button">Generate Certificate</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
